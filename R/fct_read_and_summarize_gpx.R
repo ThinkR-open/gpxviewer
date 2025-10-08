@@ -15,8 +15,8 @@ read_and_summarize_gpx <- function(path) {
       y = purrr::map_dbl(geometry, 2)
     )
   dist <- sf::st_distance(
-    tail(gpx, -1),
-    head(gpx, -1),
+    utils::tail(gpx, -1),
+    utils::head(gpx, -1),
     by_element = TRUE
   ) |>
     units::set_units("km")

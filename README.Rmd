@@ -5,11 +5,11 @@ output: github_document
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
-  knitr::opts_chunk$set(
-    collapse = TRUE,
-    comment = "#>",
-    fig.path = "man/figures/README-",
-    out.width = "100%"
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
 )
 ```
 
@@ -22,8 +22,8 @@ output: github_document
 
 You can install the development version of `{gpxviewer}` like so:
 
-```{r}
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+```r
+pak::pak("thinkr-open/gpxviewer")
 ```
 
 ## Run
@@ -47,11 +47,11 @@ Sys.time()
 Here are the tests results and package coverage:
 
 ```{r, error = TRUE}
-devtools::check(quiet = TRUE)
+pw::pw_test()
 ```
 
-```{r echo = FALSE}
-unloadNamespace("gpxviewer")
+```{r, error = TRUE}
+devtools::check(quiet = TRUE)
 ```
 
 ```{r, error = TRUE}
